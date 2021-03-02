@@ -21,6 +21,11 @@ def test_count_words(test_word, count):
   word_counts = bee_movie_analyzer.count_words(words)
   assert word_counts[test_word] == count
 
+def test_count_words_nothing_extra():
+  words = ["one", "two", "two", "three", "three", "three", "four", "four", "four", "four"]
+  word_counts = bee_movie_analyzer.count_words(words)
+  assert set(words) == set(word_counts.keys())
+
 @mark.parametrize("rank, word_list", [(1, ["you"]), (2, ["a","the"]), (3, ["i"]), (4, ["to"]), (21, ["do"]), (100, []), (0, [])])
 def test_nth_most_common_words(rank, word_list):
   assert bee_movie_analyzer.nth_most_common_words("test.txt", rank) == word_list
