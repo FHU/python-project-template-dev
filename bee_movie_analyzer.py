@@ -14,9 +14,9 @@ def nth_most_common_words(path, n):
 def count_words(word_list):
   pass
 
-# The get_fords function takes a file path and returns a filtered list of
+# The get_words function takes a file path and returns a filtered list of
 # the words in the file. 
-# The wors should all be lowercase
+# The words should all be lowercase
 # It filters out all the punctuation except contractions (they count as their own words).
 def get_words(path):
     words = []
