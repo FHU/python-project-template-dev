@@ -2,7 +2,7 @@ from pytest import mark
 
 import bee_movie_analyzer
 
-@mark.parametrize("test_word", ["buzz","you","barry"])
+@mark.parametrize("test_word", ["buzz","you","barry","you'll"])
 def test_get_words(test_word):
   words = bee_movie_analyzer.get_words("test.txt")
   
