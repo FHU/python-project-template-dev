@@ -7,7 +7,7 @@ def nth_most_common_words(path, n):
     words = get_words(path)
     word_counts = count_words(words)
  
-  return
+    return
 
 
 def count_words(word_list):
@@ -21,9 +21,9 @@ def get_words(path):
     the words in the file. 
     The words should all be lowercase
     It filters out all the punctuation except contractions (they count as their own words).'''
-        words = []
-        for line in open(path): #loop through every line in the file. path should be a string
-            pass                   #of the file path to the script.
+    words = []
+    for line in open(path): #loop through every line in the file. path should be a string
+        pass                   #of the file path to the script.
 
 
 def  word_probability(path, word):
