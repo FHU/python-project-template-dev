@@ -4,7 +4,14 @@ import re  # you can use this module for a one line replacement of all punctuati
 def nth_most_common_words(path, n):
     """The nth_most_common_words function takes the path to the script file and the
     word frequency rank and returns a list of words at that rank
-    return an empty string if the rank is below 1 or if the rank does not exist"""
+    return an empty string if the rank is below 1 or if the rank does not exist
+    
+    Args:
+        path (str): The path to the script file to analyze
+        n (int): the rank of the word list returned
+        
+    Returns:
+        List: a list of all the words at rank n"""
     words = get_words(path)
     word_counts = count_words(words)
 
