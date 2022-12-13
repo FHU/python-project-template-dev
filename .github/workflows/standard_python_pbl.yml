@@ -33,5 +33,5 @@ jobs:
       - name: Python Documentation Coverage Check
         uses: JackMcKew/python-interrogate-check@main
         with:
-          path: 'bee_movie_analyzer'
+          path: '.'
           badge-location: 'badges/interrogate_badge.svg'
