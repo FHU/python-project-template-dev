@@ -46,7 +46,7 @@ jobs:
 
   build_docs:
 
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     on:
       push:
         branches: main
