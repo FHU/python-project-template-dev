@@ -32,12 +32,12 @@ def test_count_words_nothing_extra():
 
 @mark.parametrize(
     "rank, word_list",
-    [(1, ["you"]), (2, ["the"]), (3, ["a"]), (4, ["i"]), (46, ["why", "where", "thinking"]), (100, []), (0, [])],
+    [(1, ["you"]), (2, ["the"]), (3, ["a"]), (4, ["i"]), (46, ["yeah", "could"]), (100, []), (0, [])],
 )
 def test_nth_most_common_words(rank, word_list):
     assert bee_movie_analyzer.nth_most_common_words("test.txt", rank) == word_list
 
 
-@mark.parametrize("word, prob", [("i", 0.026108804894035394), ("buzz", 0.0014201441992571554), ("jesus", 0)])
+@mark.parametrize("word, prob", [("i", 0.02610595303113053), ("buzz", 0.0014199890770070999), ("jesus", 0)])
 def test_word_probability(word, prob):
     assert bee_movie_analyzer.word_probability("test.txt", word) == approx(prob)
