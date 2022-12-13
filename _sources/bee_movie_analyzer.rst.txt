@@ -1,0 +1,7 @@
+bee\_movie\_analyzer module
+===========================
+
+.. automodule:: bee_movie_analyzer
+   :members:
+   :undoc-members:
+   :show-inheritance:
