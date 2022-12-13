@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flake8 pytest black
+          pip install flake8 pytest pytest-cov black
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Check Syntax with flake8
         run: |
@@ -27,6 +27,11 @@ jobs:
       - name: Lint with Black
         run: |
           black -l 127 --check .
-      - name: Test with pytest
+      - name: Test with pytest and generate coverage report
         run: |
-          pytest
+          pytest --cov=bee_movie_analyzer --cov-report html
+    - name: Python Documentation Coverage Check
+      uses: JackMcKew/python-interrogate-check@main
+      with:
+        path: 'bee_movie_analyzer'
+        badge-location: 'badges/interrogate_badge.svg'
