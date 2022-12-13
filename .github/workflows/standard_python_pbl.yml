@@ -25,12 +25,15 @@ jobs:
           # stop the build if there are Python syntax errors or undefined names
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
       - name: Lint with Black
+        if: success() || failure()
         run: |
           black -l 127 --check .
       - name: Test with pytest and generate coverage report
+        if: success() || failure()
         run: |
           pytest --cov=bee_movie_analyzer --cov-report html
       - name: Python Documentation Coverage Check
+        if: success() || failure()
         uses: JackMcKew/python-interrogate-check@main
         with:
           path: '.'
