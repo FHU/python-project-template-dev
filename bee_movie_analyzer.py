@@ -1,3 +1,5 @@
+"""Script to analyze a text file of 'the bee movie' movie script"""
+
 import re  # you can use this module for a one line replacement of all punctuation
 
 

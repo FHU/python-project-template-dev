@@ -1,3 +1,6 @@
+"""Tests to make sure the bee movie analyzer correctly analyzes text files. Uses the script as input.
+"""
+
 from pytest import mark, approx
 
 import bee_movie_analyzer
