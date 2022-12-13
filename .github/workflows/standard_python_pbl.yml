@@ -30,8 +30,8 @@ jobs:
       - name: Test with pytest and generate coverage report
         run: |
           pytest --cov=bee_movie_analyzer --cov-report html
-    - name: Python Documentation Coverage Check
-      uses: JackMcKew/python-interrogate-check@main
-      with:
-        path: 'bee_movie_analyzer'
-        badge-location: 'badges/interrogate_badge.svg'
+      - name: Python Documentation Coverage Check
+        uses: JackMcKew/python-interrogate-check@main
+        with:
+          path: 'bee_movie_analyzer'
+          badge-location: 'badges/interrogate_badge.svg'
