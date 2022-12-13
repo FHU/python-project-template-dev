@@ -20,7 +20,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest pytest-cov black
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Check Syntax with flake8
+      - name: Check syntax with flake8
         run: |
           # stop the build if there are Python syntax errors or undefined names
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -28,10 +28,10 @@ jobs:
         run: |
           # run all the pytest tests
           pytest --cov=bee_movie_analyzer --cov-report html
-      - name: Check Syntax with flake8
+      - name: Check naming with flake8
         if: success() || failure()
         run: |
-          # check to see if names match pep8
+          # check to see if names match pep8 with flake8
           flake8 . --count --select=N801,N802,N803,N804,N805,N806,N807,N811,N812,N813,N814,N815,N816,N817,N818 --show-source --statistics
       - name: Lint with Black
         if: success() || failure()
