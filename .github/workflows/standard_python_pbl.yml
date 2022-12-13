@@ -34,4 +34,3 @@ jobs:
         uses: JackMcKew/python-interrogate-check@main
         with:
           path: '.'
-          badge-location: 'badges/interrogate_badge.svg'
