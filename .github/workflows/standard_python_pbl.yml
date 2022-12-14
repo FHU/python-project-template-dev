@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flake8 pep8-naming pytest pytest-cov black
+          pip install flake8 pep8-naming pytest coverage black
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Check syntax with flake8
         run: |
@@ -35,7 +35,6 @@ jobs:
         run: |
           # run all the pytest tests
           coverage run -m pytest
-          coverage html --show-contexts -d ./docs/_build/htmlcov/
           coverage xml
       - name: Check naming with flake8
         if: success() || failure()
@@ -66,7 +65,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   build_docs:
-    needs: test
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -91,8 +89,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest pytest-cov sphinx sphinx_rtd_theme
+          pip install pytest coverage sphinx sphinx_rtd_theme
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Generate coverage report for Pages
+        run: |
+          # run all the pytest tests
+          coverage run -m pytest
+          coverage html --show-contexts -d ./docs/htmlcov/
       - name: Generate autodoc files with napoleon
         run: |
           # Make .rst files from Google docstrings
