@@ -58,7 +58,7 @@ jobs:
           args: >
             -Dsonar.organization=fhu
             -Dsonar.projectKey=${{ github.repository_owner }}_${{ github.event.repository.name }}
-            -Dsonar.python.version=3.10, 3.11
+            -Dsonar.python.version=3.10,3.11
             -Dsonar.python.coverage.reportPaths=coverage.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
