@@ -1,3 +1,8 @@
+**CI/CD Development for projects**
+This repository is used to test changes to the automation used in our standard
+python assignments. The example application is a small assignment on functions.
+
+
 **Bee Movie script analysis**
 
 Have you ever stopped to wonder, "How many times does is the word 'bee' spoken
