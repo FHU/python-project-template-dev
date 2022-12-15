@@ -17,5 +17,6 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
+* `SonarCloud Project`_
 * `Test Coverage Report <_static/htmlcov/index.html>`_
 * :ref:`search`
