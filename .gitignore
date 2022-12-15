@@ -140,3 +140,4 @@ cython_debug/
 # Documentation build
 docs/_build
 .DS_store
+docs/_static/doc_coverage*
