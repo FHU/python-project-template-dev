@@ -12,15 +12,16 @@
 #
 import os
 import sys
+import datetime
 
 sys.path.insert(0, os.path.abspath("../"))
 
 
 # -- Project information -----------------------------------------------------
 
-project = "Template(change me)"
-copyright = "2022, FHU Student"
-author = "FHU Student"
+project = os.getenv("github.event.repository.name", "FHU Student Project")
+copyright = f"{datetime.date.year}, FHU"
+author = os.getenv("GITHUB_OWNER", "FHU Student")
 
 # The full version, including alpha/beta/rc tags
 release = "alpha0"
