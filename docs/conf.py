@@ -19,8 +19,8 @@ sys.path.insert(0, os.path.abspath("../"))
 
 # -- Project information -----------------------------------------------------
 
-project = os.getenv("github.event.repository.name", "FHU Student Project")
-copyright = f"{datetime.date.year}, FHU"
+project = os.getenv("GITHUB_EVENT_REPOSITORY_NAME", "FHU Student Project")
+copyright = f"{datetime.now().year}, Freed-Hardeman University"
 author = os.getenv("GITHUB_OWNER", "FHU Student")
 
 # The full version, including alpha/beta/rc tags
