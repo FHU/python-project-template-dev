@@ -112,9 +112,9 @@ jobs:
           pip install sphinx sphinx_rtd_theme
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Download html report artifact
-          uses: actions/download-artifact@v3
-          with:
-            name: coverage_html
+        uses: actions/download-artifact@v3
+        with:
+          name: coverage_html
       - name: Generate autodoc files with napoleon
         run: |
           # Make .rst files from Google docstrings
