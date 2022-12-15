@@ -29,9 +29,10 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
       - name: Test with pytest and coverage
         run: |
-          # run all the pytest tests
+          # run all the pytest tests through coverage to also get test coverage metrics
           coverage run -m pytest
       - name: Generate coverage reports for SonarCloud and documentation
+        run: |
           coverage xml
           coverage html --show-contexts -d ./docs/htmlcov/
       - name: Upload html coverage report for Documentation
