@@ -10,7 +10,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
