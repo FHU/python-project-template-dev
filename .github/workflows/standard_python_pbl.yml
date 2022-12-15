@@ -134,7 +134,7 @@ jobs:
           path: docs/_static/htmlcov
       - name: Generate report and badge for documentation coverage
         run: |
-          interrogate . -vv -q -o docs/_static/doc_coverage.txt -g docs/_static/doc_coverage_badge.png
+          interrogate . -vv -f 0 -o docs/_static/doc_coverage.txt -g docs/_static/doc_coverage_badge.svg
       - name: Generate autodoc files with napoleon
         run: |
           # Make .rst files from Google docstrings
