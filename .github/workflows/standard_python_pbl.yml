@@ -45,7 +45,7 @@ jobs:
           name: coverage_xml
           path: coverage.xml
 
-  sonarcloud scan:
+  sonarcloud:
     needs: test
     runs-on: ubuntu-latest
 
