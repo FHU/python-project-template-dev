@@ -117,7 +117,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: coverage_html
-          path: docs/htmlcov
+          path: docs/_htmlcov
       - name: Generate autodoc files with napoleon
         run: |
           # Make .rst files from Google docstrings
