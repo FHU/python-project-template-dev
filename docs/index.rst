@@ -17,4 +17,5 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
+* `Test Coverage Report <../_htmlcov/index.html>`
 * :ref:`search`
