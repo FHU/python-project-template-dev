@@ -83,17 +83,17 @@ jobs:
           pip install black flake8 pep8-naming interrogate
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Check naming with flake8
-        if: success() || failure()
+        continue-on-error: true
         run: |
           # check to see if names match pep8 with flake8
           flake8 . --count --select=N801,N802,N803,N804,N805,N806,N807,N811,N812,N813,N814,N815,N816,N817,N818 --show-source --statistics
       - name: Lint with Black
-        if: success() || failure()
+        continue-on-error: true
         run: |
           # check to see if black was run with the length option of 127 before committing
           black -l 127 --check .
       - name: Python Documentation Coverage Check (interrogate)
-        if: success() || failure()
+        continue-on-error: true
         run: |
           interrogate .
 
@@ -132,10 +132,10 @@ jobs:
           name: coverage_html
           path: docs/_static/htmlcov
       - name: Generate report and badge for documentation coverage
+        continue-on-error: true
         run: |
           interrogate . -vv -f 100 -o docs/_static/doc_coverage.txt -g docs/_static/doc_coverage_badge.svg
       - name: Generate autodoc files with napoleon
-        if: success() || failure()
         run: |
           # Make .rst files from Google docstrings
           sphinx-apidoc -f -o docs/ .
