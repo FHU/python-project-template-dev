@@ -125,13 +125,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install sphinx sphinx_rtd_theme
+          pip install sphinx sphinx_rtd_theme interrogate
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Download html report artifact
         uses: actions/download-artifact@v3
         with:
           name: coverage_html
           path: docs/_static/htmlcov
+      - name: Generate report and badge for documentation coverage
+        run: |
+          interrogate . -vv -q -o docs/_static/doc_coverage.txt -g docs/_static/doc_coverage_badge.png
       - name: Generate autodoc files with napoleon
         run: |
           # Make .rst files from Google docstrings
@@ -139,7 +142,7 @@ jobs:
       - name: Generate documentation
         run: |
           # Make the html files to publish
-          sphinx-build docs docs/_build
+          sphinx-build docs docs/_build -b coverage
         env:
           SONARCLOUD_PROJECT: https://sonarcloud.io/project/overview?id=${{ github.repository_owner }}_${{ github.event.repository.name }}
       - name: Setup Pages

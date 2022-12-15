@@ -19,4 +19,5 @@ Indices and tables
 * :ref:`modindex`
 * `SonarCloud Project`_
 * `Test Coverage Report <_static/htmlcov/index.html>`_
+* `Documentation Coverage Report <_static/doc_coverage.txt>`_
 * :ref:`search`
