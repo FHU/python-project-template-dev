@@ -142,7 +142,7 @@ jobs:
       - name: Generate documentation
         run: |
           # Make the html files to publish
-          sphinx-build docs docs/_build -b coverage
+          sphinx-build docs docs/_build
         env:
           SONARCLOUD_PROJECT: https://sonarcloud.io/project/overview?id=${{ github.repository_owner }}_${{ github.event.repository.name }}
       - name: Setup Pages
