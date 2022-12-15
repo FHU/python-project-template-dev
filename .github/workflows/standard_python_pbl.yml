@@ -1,5 +1,5 @@
 
-   
+
 name: FHU Standard Python Project Tests
 
 on: [push]
@@ -57,7 +57,7 @@ jobs:
           name: coverage_xml
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
-        with: 
+        with:
           args: >
             -Dsonar.organization=fhu
             -Dsonar.projectKey=${{ github.repository_owner }}_${{ github.event.repository.name }}
@@ -92,7 +92,7 @@ jobs:
         continue-on-error: true
         run: |
           # check to see if black was run with the length option of 127 before committing
-          black -l 127 --check .
+          black --check .
       - name: Python Documentation Coverage Check (interrogate)
         continue-on-error: true
         run: |

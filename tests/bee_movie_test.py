@@ -1,7 +1,7 @@
 """Tests to make sure the bee movie analyzer correctly analyzes text files. Uses the script as input.
 """
 
-from pytest import mark, approx
+from pytest import approx, mark
 
 import bee_movie_analyzer
 
@@ -14,7 +14,9 @@ def test_get_words(test_word):
     assert test_word in words
 
 
-@mark.parametrize("test_word", ["jesus", "Barry", "fly.", "great!", "right?", "so,", '"you', "-"])
+@mark.parametrize(
+    "test_word", ["jesus", "Barry", "fly.", "great!", "right?", "so,", '"you', "-"]
+)
 def test_get_words_missing(test_word):
     """Check that get_words returns a list that does not include some words"""
     words = bee_movie_analyzer.get_words("test.txt")
@@ -22,7 +24,9 @@ def test_get_words_missing(test_word):
     assert test_word not in words
 
 
-@mark.parametrize("test_word, count", [("one", 1), ("two", 2), ("three", 3), ("four", 4)])
+@mark.parametrize(
+    "test_word, count", [("one", 1), ("two", 2), ("three", 3), ("four", 4)]
+)
 def test_count_words(test_word, count):
     """Check that count_words, givin a list of words, counts them appropriatly"""
     words = [

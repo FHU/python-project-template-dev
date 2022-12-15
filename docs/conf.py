@@ -6,13 +6,14 @@
 
 # -- Path setup --------------------------------------------------------------
 
+import datetime
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
 import sys
-import datetime
 
 sys.path.insert(0, os.path.abspath("../"))
 
@@ -59,5 +60,7 @@ html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
 
 # set a target definition from an environment variable to the SonarCloud project
-sonarcloud_link = os.getenv("SONARCLOUD_PROJECT", "https://sonarcloud.io/organizations/fhu/projects")
+sonarcloud_link = os.getenv(
+    "SONARCLOUD_PROJECT", "https://sonarcloud.io/organizations/fhu/projects"
+)
 rst_epilog = f".. _SonarCloud Project: {sonarcloud_link}"

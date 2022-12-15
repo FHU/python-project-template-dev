@@ -52,8 +52,12 @@ def get_words(path):
     The words should all be lowercase
     It filters out all the punctuation except contractions (they count as their own words)."""
     words = []
-    for line in open(path):  # loop through every line in the file. path should be a string
-        words.extend(re.sub(r'[,.?!"\-:]', "", line).lower().split())  # of the file path to the script.
+    for line in open(
+        path
+    ):  # loop through every line in the file. path should be a string
+        words.extend(
+            re.sub(r'[,.?!"\-:]', "", line).lower().split()
+        )  # of the file path to the script.
     return words
 
 
