@@ -6,7 +6,6 @@ on: [push]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -40,6 +39,21 @@ jobs:
         with:
           name: coverage_html
           path: docs/htmlcov
+      - name: Upload xml coverage report for SonarCloud
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage_xml
+          path: coverage.xml
+
+  sonarcloud scan:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download xml coverage report
+        uses: actions/download-artifact@v3
+        with:
+          name: coverage_xml
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         with: 
