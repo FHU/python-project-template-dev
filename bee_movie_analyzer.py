@@ -4,7 +4,7 @@ import re  # you can use this module for a one line replacement of all punctuati
 from typing import Dict
 
 
-def nth_most_common_words(path, n):
+def nth_most_common_words(path: str, n: int):
     """The nth_most_common_words function takes the path to the script file and the
     word frequency rank and returns a list of words at that rank
     return an empty string if the rank is below 1 or if the rank does not exist
@@ -18,7 +18,7 @@ def nth_most_common_words(path, n):
     words = get_words(path)
     word_counts = count_words(words)
 
-    words_by_count = {}
+    words_by_count: Dict[int, list] = {}
     for word, count in word_counts.items():
         if count in words_by_count:
             words_by_count[count].append(word)
