@@ -1,6 +1,7 @@
 """Script to analyze a text file of 'the bee movie' movie script"""
 
 import re  # you can use this module for a one line replacement of all punctuation
+from typing import Dict
 
 
 def nth_most_common_words(path, n):
@@ -33,10 +34,10 @@ def nth_most_common_words(path, n):
     return words_by_count[ranks[n - 1]]
 
 
-def count_words(word_list):
+def count_words(word_list: list) -> dict:
     """The count_words function takes a word list and returns a dictionary with
     the word as key and the value is the word count for that word"""
-    word_counts = {}
+    word_counts: Dict[str, int] = {}
     for word in word_list:
         if word in word_counts:
             word_counts[word] += 1
