@@ -2,34 +2,41 @@
 This repository is used to test changes to the automation used in our standard
 python assignments. The example application is a small assignment on functions.
 
+**What is in this repo, anyway?**
+There are lots of files and directories in this repository, what are they all for?
 
-**Bee Movie script analysis**
+*.github/workflows/standard_python_pbl.yml*
+This yaml file defines the ci/cd pipeline for the repository. Any yaml file in this
+directory can define an additional workflow.
 
-Have you ever stopped to wonder, "How many times does is the word 'bee' spoken
-in Bee Movie?" or "What is the 50th most common word in the movie?"
+*.vscode/settings.json*
+This json file configures the workspace settings for VSCode.
 
-If you have, you're in luck! We get to write four functions to analyze the
-words in the Bee Movie script.
+*docs*
+This directory is used for configuration and templates for Sphinx, the tool we use to
+generate the html documentation pages.
 
-```
-nth_most_common_words(path, n)
-    The nth_most_common_words function takes the path to the script file and the 
-    word frequency rank and returns a list of words at that rank
-    return an empty string if the rank is below 1 or if the rank does not exist
+*tests*
+This directory is used by pytest. The names of files, functions, classes, and methods
+dictate what is a test for pytest.
 
-count_words(word_list)
-    The count_words function takes a word list and returns a dictionary with
-    the word as key and the value is the word count for that word
+*.coveragerc*
+This configuration file is for coverage.py
 
-get_words(path)
-    The get_words function takes a file path and returns a filtered list of
-    the words in the file. 
-    The words should all be lowercase
-    It filters out all the punctuation except contractions (they count as their own words).
+*.gitignore*
+This file is a list of patterns that exclude files from git. Temporary files and some
+configuration files should be left out of version control.
 
-word_probability(path, word)
-    The word probability function takes a file path and a word and returns a float
-    that is a decimal value of the probability that any single word in the script
-    would be that word.
-    - If the word is not in the script, the probability is 0
-```
+*.pre-commit-config.yaml*
+This yaml file defines the pre-commit hooks we will install with pre-commit (the Python tool)
+
+*conftest.py*
+This file lets pytest know the root directory of the code. It can have some pytest
+configuration, but this one does not.
+
+*README.md*
+This markdown file.
+
+*requirements.txt*
+A list of dependancies for the program. Packages that need to be installed with pip to
+import them in the program should all be in this file. 
