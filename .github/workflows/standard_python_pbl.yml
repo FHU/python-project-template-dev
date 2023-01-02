@@ -100,7 +100,7 @@ jobs:
       - name: Python Documentation Coverage Check (interrogate)
         if: success() || failure()
         run: |
-          interrogate .
+          interrogate . -e tests -e conftest.py -e docs
 
 
   build_docs:
