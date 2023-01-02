@@ -1,4 +1,8 @@
-[coverage:run]
+[run]
 relative_files = True
 source = .
 omit = docs/*,tests/*,conftest.py
+
+[report]
+exclude_lines =
+    if __name__ == .__main__.:
