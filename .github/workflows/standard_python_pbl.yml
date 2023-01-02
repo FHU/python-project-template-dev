@@ -82,13 +82,15 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install black flake8 pep8-naming interrogate
+          pip install black flake8 pep8-naming interrogate darglint
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Check naming with flake8
         continue-on-error: true
         run: |
           # check to see if names match pep8 with flake8
           flake8 . --count --select=N801,N802,N803,N804,N805,N806,N807,N811,N812,N813,N814,N815,N816,N817,N818 --show-source --statistics
+          # check to see if docstrings are google standards compliant
+          flake8 . --count --select=DAR101,DAR201 --show-source --statistics
       - name: Lint with Black
         continue-on-error: true
         run: |
