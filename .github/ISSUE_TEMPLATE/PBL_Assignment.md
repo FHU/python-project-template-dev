@@ -10,6 +10,7 @@ assignments: ''
 <!--- Details about the assignment go here -->
 
 # Kanban Checklist
+Once each checklist is complete, move the issue to the next Kanban column: https://github.com/orgs/FHU/projects/8.
 ## Assigned
 - [ ] Create Branch
 - [ ] Create pull request
