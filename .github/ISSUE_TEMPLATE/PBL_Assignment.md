@@ -20,38 +20,40 @@ Once each checklist is complete, move the issue to the next Kanban column: https
 
 ## Planning
 - [ ] Discuss assignment so everyone understands the work
-- [ ] Identify research opportunities
-- [ ] Split tasks (Research and other assignment parts) equitably (document in comments)
-- [ ] Write pseudocode
-- [ ] next meeting time and place established (for team, document in comments)
+- [ ] Identify research opportunities (what do we need to know now that we don't)
+- [ ] Split research and project tasks equitably (document in next section, include who is responsible for each task)
+- [ ] Next meeting time and place established (for team, document in comments)
 
-Note: Do not wait for the instructor approval to start working the plan.
-## Planning Complete
+Note: Do not wait for the instructor approval to start working the plan. It may need to be adjusted, but it is valuable!
+## Plan Review
 - [ ] Instructor discussion and signoff
 
 ## Developing
+- [ ] <!--- Add research and split tasks to this list. Include who is responsible for each task >
 - [ ] Meet assignment objectives
 - [ ] Write and pass automated testing for code (pytest)
 - [ ] Ensure type annotations are correct (mypy)
 - [ ] Write all the docstrings according to the Google standard
 - [ ] Pass the automated tests in GitHub Actions
 
-## Reviewing as a team
+## Reviewing (code as a team)
 - [ ] Check test coverage is sufficient
 - [ ] Check documentation coverage is sufficient
-- [ ] Check and discuss issues in SonarCloud
+- [ ] Check and discuss issues in SonarCloud (add to improving checklist as needed)
 - [ ] Discuss opportunities for improvement
 - [ ] Identify at least 3 opportunities for improvement
+- [ ] Make sure the module docstring includes links to resources used in this project and kudos to helpers
 - [ ] Create the "improving" checklist below
+- [ ] Schedule an instructor code review
 
 Note: Do not wait for the instructor approval to start working the plan.
-## Review Complete
+## Code Review Scheduled
 - [ ] Instructor discussion and signoff
 
 ## Improving
 - [ ] Resolve issues with automated tests
 - [ ] Resolve issues in SonarCloud
-- [ ] <!--- Additional improvements go here -->
+- [ ] <!--- Additional improvements from the code reviews go here -->
 
 ## Plan Demo as a team
 - [ ] Prepare to show code running in an appropriate context
@@ -62,6 +64,7 @@ Note: Do not wait for the instructor approval to start working the plan.
 ## Demo
 - [ ] Present your project to the class
 - [ ] Answer class and instructor questions
+- [ ] Everyone fill out the project assessment: https://forms.gle/vSLMmaQiJrD8D9ZW8
 
 ## Done
 🎈🎈 💥 🎉 Celebrate! 🎉 💥 🎈🎈
